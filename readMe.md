@@ -23,5 +23,5 @@
 -
 -
 
-##### Created by 
+##### Contributor &  
   - Aashish Kumar Singh [instagram](https://instagram.com/ashdude14)
