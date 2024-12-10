@@ -6,7 +6,7 @@
 
 - VS Code or any IDE.
 - Python 3.0.xx installed.
-- Selenium WebDriver with correct version.
+- <b>Make Sure to download the same chrome or any browser webdriver matching with the version. </b>
 - Pandas.
 - Power BI.
 
@@ -22,6 +22,28 @@
 -
 -
 -
+
+
+### How to run this project to your local machine
+- Clone this repository in youer local machine
+ ```git
+ git clone https://www.github.com/ashdude14/DA4
+ ```
+- Make sure all the required software/module is installed.
+- Paste the webdriver in the location
+  ```
+  CollectData\chromedriver-exe
+  ```
+- To get the data from Naukri.com portal, run this command 
+```
+   python collect.py
+```
+-  Make sure to change the directory to 
+```
+CollectData>
+```
+### [Refrences]
+ - [chrome web driver version download](https://googlechromelabs.github.io/chrome-for-testing/#stable)
 
 ##### Contributor &  
   - Aashish Kumar Singh [instagram](https://instagram.com/ashdude14)
