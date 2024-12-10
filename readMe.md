@@ -16,6 +16,24 @@
 - Data Cleaning - With the help of <i> Excel </i> and <i> Pandas </i> this Data Cleaning step is being performed to give a well structure of dataset for furthur analysis.
 - Data Transformation and Visualization - To get the insights on the various fields with the help of<i> Power BI </i> and <i> DAX queries </i> dashboard and KPIs will be generated. 
 
+### Here is the detail description of <i> Web Scraping </i> via Selenium automation
+
+Let's look out for the desired data.
+
+![snapShot](ss-1.png) 
+
+So, after the careful inspection we can get the <i> class </i> names where the data is residing. So total 6 rows are there.
+ - row1, row2, row3, row4, row5 and row6.
+ - Which can be found with <i>CSS Selector </i>
+
+   ```python
+    elements=driver.find_elements(By.CSS_SELECTOR,".row1, .row2,.row3, .row4, .row5, .row6") 
+   ``` 
+ - Total ```170002``` list data are to be taken and, it can load ```20``` list data in ```1``` page.
+ - To load all ```8500``` pages records we need to automate the page by clicking `next` button on <i> bottom-right </i> button ```8500```'s time.
+
+ - These data are exported by using ```csv``` module of ```python``` and that will save the data in ```file_name.csv``` 
+
 ### Outcomes of this project
 - Various results on the basis of filters can be shown with snapshts will be attached later.
 - What are the <b> Key Skills </b> needed to get into the </i> Data Analyst </i> field with <i>Experience </i>?
