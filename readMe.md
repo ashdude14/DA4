@@ -67,7 +67,23 @@ So, after the careful inspection we can get the <i> class </i> names where the d
             writer.writerow(formatted_row)
 
  ```
+ ## Data Cleaning & Transformation
 
+ -  Gathared Data looks like this -
+ ![rawData](ss-3.png)
+ - Idea is to make this data as - 
+ ![proceesedData](ss-2.png)
+ - Processed data should have 9 columns
+   - Job Id
+   - Title
+   - Employer
+   - Experience
+   - Salary
+   - Locations
+   - Skills
+   - Date
+   - Descriptions
+- ```pandas``` is being used for the cleaning and transformations.
 ### Outcomes of this project
 - Various results on the basis of filters can be shown with snapshts will be attached later.
 - What are the <b> Key Skills </b> needed to get into the </i> Data Analyst </i> field with <i>Experience </i>?
