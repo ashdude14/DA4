@@ -119,8 +119,16 @@ fatal: the remote end hung up unexpectedly
 Everything up-to-date
 ```
 ```git
-git config --global http.postBuffer 524288000
+git lfs install
+ git lfs track "*.csv"
+ git add .gitattributes
+ git add DataSet/data.csv
+  git commit -m "Added CSV LARGE FILE"
+```
+```error
 
+batch response: This repository is over its data quota. Account responsible for LFS bandwidth should purchase more data packs to restore access.
+error: failed to push some refs to 'github.com:ashdude14/DA4.git'
 ```
 ##### Contributor &  
   - Aashish Kumar Singh [instagram](https://instagram.com/ashdude14)
