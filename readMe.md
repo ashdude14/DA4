@@ -97,5 +97,11 @@ CollectData>
 ### [Refrences]
  - [chrome web driver version download](https://googlechromelabs.github.io/chrome-for-testing/#stable)
 
+### Challenges
+- Uploading large files data
+```git
+git config --global http.postBuffer 524288000
+
+```
 ##### Contributor &  
   - Aashish Kumar Singh [instagram](https://instagram.com/ashdude14)
