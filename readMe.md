@@ -99,6 +99,25 @@ CollectData>
 
 ### Challenges
 - Uploading large files data
+```error
+
+error: RPC failed; HTTP 400 curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+```
+```cmd
+ git push
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (14/14), 636.57 KiB | 5.89 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+error: RPC failed; HTTP 400 curl 92 HTTP/2 stream 5 was not closed cleanly: CANCEL (err 8)
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+```
 ```git
 git config --global http.postBuffer 524288000
 
