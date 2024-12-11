@@ -32,7 +32,41 @@ So, after the careful inspection we can get the <i> class </i> names where the d
  - Total ```170002``` list data are to be taken and, it can load ```20``` list data in ```1``` page.
  - To load all ```8500``` pages records we need to automate the page by clicking `next` button on <i> bottom-right </i> button ```8500```'s time.
 
- - These data are exported by using ```csv``` module of ```python``` and that will save the data in ```file_name.csv``` 
+  ```python
+   next_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']/.."))
+            )
+
+            # Scroll to and click the "Next" button
+            driver.execute_script("arguments[0].scrollIntoView(true);", next_button)
+            driver.execute_script("arguments[0].click();", next_button)
+
+            # Wait for the next page to load
+            time.sleep(5)
+  ```
+
+ - These data are exported by using ```csv``` module of ```python``` and that will save the data in ```../DataSet/data.csv``` 
+
+ ```python
+ def extract_and_save_data():
+    """Extract and save data from the current page."""
+    try:
+        # Find data elements
+        data_elements = driver.find_elements(By.CSS_SELECTOR, ".row1, .row2, .row3, .row4, .row5, .row6")
+        save_to_file(Data_Set_path, data_elements)
+    except Exception as e:
+        print(f"Error during data extraction: {e}")
+
+        def save_to_file(file, elements):
+    """Save extracted data to the CSV file."""
+    with open(file, 'a', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        for element in elements:
+            text_content = element.text.strip().split('\n')
+            formatted_row = [" | ".join(text_content)]
+            writer.writerow(formatted_row)
+
+ ```
 
 ### Outcomes of this project
 - Various results on the basis of filters can be shown with snapshts will be attached later.
