@@ -10,8 +10,8 @@ PATH = "chromedriver.exe"
 URL = "https://www.naukri.com/data-analyst-jobs"
 Data_Set_path = "../DataSet/data.csv"
 
-# Create the directory if it doesn't exist
-#os.makedirs(os.path.dirname(Data_Set_path), exist_ok=True)
+# Ensure the directory exists
+os.makedirs(os.path.dirname(Data_Set_path), exist_ok=True)
 
 # Options 
 option = Options()
@@ -24,12 +24,19 @@ def SaveToFile(file, elements):
     with open(file, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         for element in elements:
-            writer.writerow([element.text])  # Save the text content of the elements
+            # Extract the text content of the element and split into lines
+            text_content = element.text.strip().split('\n')
+            
+            # Join the text content into a single row with fields separated by commas
+            formatted_row = [", ".join(text_content)]  # Use "|" or another delimiter
+            
+            # Write the row to the CSV file
+            writer.writerow(formatted_row)
 
 try:
     driver.get(URL)
-    
     time.sleep(10)  # Allow time for the page to load
+    
     filter_class = driver.find_elements(By.CSS_SELECTOR, ".row1, .row2, .row3, .row4, .row5, .row6") 
     
     SaveToFile(Data_Set_path, filter_class)
