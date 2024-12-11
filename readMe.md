@@ -84,6 +84,8 @@ So, after the careful inspection we can get the <i> class </i> names where the d
    - Date
    - Descriptions
 - ```pandas``` is being used for the cleaning and transformations.
+- processed data set -
+![processedData](ss-4.png)
 ### Outcomes of this project
 - Various results on the basis of filters can be shown with snapshts will be attached later.
 - What are the <b> Key Skills </b> needed to get into the </i> Data Analyst </i> field with <i>Experience </i>?
@@ -93,7 +95,7 @@ So, after the careful inspection we can get the <i> class </i> names where the d
 
 
 ### How to run this project to your local machine
-- Clone this repository in youer local machine
+- Clone this repository in your local machine
  ```git
  git clone https://www.github.com/ashdude14/DA4
  ```
@@ -171,5 +173,6 @@ Uploading LFS objects:   0% (0/1), 262 KB | 16 KB/s
  cat ~/.ssh/id_ed25519.pub
  ```
  - Add ```Setting```->```SSH```->```New Key```->```paste the key```
+ - [Solved] compressing the data file solves the issue!! 
 ##### Contributor & Author 
   - Aashish Kumar Singh [[Email]](ashish.kumar.singh.jee@gmail.com)
