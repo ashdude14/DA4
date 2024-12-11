@@ -106,7 +106,7 @@ send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
 ```
 ```cmd
- git push
+git push
 Enumerating objects: 18, done.
 Counting objects: 100% (18/18), done.
 Delta compression using up to 8 threads
@@ -118,17 +118,42 @@ send-pack: unexpected disconnect while reading sideband packet
 fatal: the remote end hung up unexpectedly
 Everything up-to-date
 ```
+- Enabling Large File System to upload ```data.csv```
 ```git
 git lfs install
- git lfs track "*.csv"
- git add .gitattributes
- git add DataSet/data.csv
-  git commit -m "Added CSV LARGE FILE"
+git lfs track "*.csv"
+git add .gitattributes
+git add DataSet/data.csv
+git commit -m "Added CSV LARGE FILE"
 ```
-```error
-
+```  
+#error
 batch response: This repository is over its data quota. Account responsible for LFS bandwidth should purchase more data packs to restore access.
 error: failed to push some refs to 'github.com:ashdude14/DA4.git'
 ```
-##### Contributor &  
-  - Aashish Kumar Singh [instagram](https://instagram.com/ashdude14)
+- After adding ```data.csv``` in ```.igignore``` file ```LFS``` works sucessfully!
+ ```log
+Uploading LFS objects:   0% (0/1), 262 KB | 16 KB/s
+ ```
+ ```
+ LFS: Put "https://github-cloud.s3.amazonaws.com/alambic/media/807411215/9b/7b/9b7b6708a9c6411af5186a98191980dbe183a7557375d236afa9f59cd56020f7?actor_id=81191043&key_id=0&repo_id=899800055": dial tcp: lookup github-cloud.s3.amazonaws.com: no such host
+ ```
+ ```xml
+ <Error>
+<Code>AccessDenied</Code>
+<Message>Access Denied</Message>
+<RequestId>ENTYZSENZCW1DJYX</RequestId>
+<HostId>/DJKDiJ8qZsfY1Obj1V6aa2Va+YyuUcCCIldxK9UMfn9LYvmAMUpyEqjiYLDpD8WXUJXanZibwc=</HostId>
+</Error>
+ ```
+ - Increasing the dial time
+ ```
+ > git config --global lfs.dialtimeout 60
+ ```
+ - To add ```SSH``` key check
+ ```
+ cat ~/.ssh/id_ed25519.pub
+ ```
+ - Add ```Setting```->```SSH```->```New Key```->```paste the key```
+##### Contributor & Author 
+  - Aashish Kumar Singh [[Email]](ashish.kumar.singh.jee@gmail.com)
